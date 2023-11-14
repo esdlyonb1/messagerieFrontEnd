@@ -83,12 +83,28 @@ const messagesListParams = {
 
 const content = document.querySelector('.content')
 
+async function getMessages()
+{
+await fetch(`${baseUrl}api/messages`, messagesListParams)
+        .then(response=>response.json())
+        .then(data=>{
+            return data
 
-fetch(`${baseUrl}api/messages`, messagesListParams)
-    .then(response=>response.json())
-    .then(data=>{
-        console.log(data)
-        data.forEach((message)=>{
-            content.innerHTML+= `<p>${message.content}</p>`
-        })
-    } )
+        } )
+}
+function passeLesMEssagesJeLesMEtsDansUnTemplate(messages)
+{
+    messages.forEach((message)=>{
+        content.innerHTML+= `<p>${message.content}</p>`
+    })
+}
+
+
+truc.addEventListener('click', ()=>{
+    getMessages().then(messages =>{
+        passeLesMEssagesJeLesMEtsDansUnTemplate(messages)
+    })
+})
+
+
+
