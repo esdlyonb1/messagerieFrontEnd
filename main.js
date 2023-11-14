@@ -21,6 +21,16 @@
 // Headers
 //          Authorization : `Bearer ${token}`
 
+//poster un nouveau message
+//requete POST  https://b1messenger.imatrythis.tk/api/messages/new
+// Headers
+//          Authorization : `Bearer ${token}`
+//Corps de requete :
+// {
+//  "content":"bla bla bla bla"
+// }
+
+
 const baseUrl = "https://b1messenger.imatrythis.tk/"
 
 // const corpsRequeteRegister = {
